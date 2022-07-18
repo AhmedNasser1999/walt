@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:mask_input_formatter/mask_input_formatter.dart';
 import 'package:walt/components/colors.dart';
 import 'package:walt/screens/password_recovery/verifyidentity.dart';
 import '../../components/components.dart';
 
 class PasswordRecovery extends StatelessWidget {
-  const PasswordRecovery({Key? key}) : super(key: key);
-
+   PasswordRecovery({Key? key}) : super(key: key);
+ final  MaskInputFormatter phoneFormatter=MaskInputFormatter(mask: '### ### ###');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,6 +83,7 @@ class PasswordRecovery extends StatelessWidget {
                               ),
                               IntlPhoneField(
                                 cursorColor: Colors.grey,
+                                inputFormatters: [phoneFormatter],
                                 showCursor: true,
                                 style: const TextStyle(
                                     fontSize: 14,

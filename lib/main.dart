@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
       ),
-      home: GettingStartedScreen(),
+      home: PasswordRecovery(),
     );
   }
 }
