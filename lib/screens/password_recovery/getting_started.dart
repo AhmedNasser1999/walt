@@ -108,6 +108,7 @@ class GettingStartedScreen extends StatelessWidget {
                                     height: 45,
                                     child: Center(
                                         child: buildTextForm(
+                                          false,
                                             nameController,
                                             'Ugur Ates',
                                             ctx,
@@ -127,6 +128,7 @@ class GettingStartedScreen extends StatelessWidget {
                                   SizedBox(
                                     height: 45,
                                     child: buildTextForm(
+                                      true,
                                         phoneController,
                                         '(+84) 123456789',
                                         ctx,
@@ -146,6 +148,7 @@ class GettingStartedScreen extends StatelessWidget {
                                   SizedBox(
                                     height: 45,
                                     child: buildTextForm(
+                                      false,
                                         passwordController,
                                         'write password',
                                         ctx,
