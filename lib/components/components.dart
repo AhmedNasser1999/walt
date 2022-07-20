@@ -11,22 +11,22 @@ Padding buildCloseButton() {
     ),
   );
 }
-//j
 
 ElevatedButton buildElevatedButton(
-    {
-    required onPrimary,
+    {required onPrimary,
     required height,
     required width,
     required text,
+      primary,
+      textColor,
     required onPressed}) {
   return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          primary: primaryColor,
+          primary: primary??primaryColor,
           onPrimary: onPrimary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
-          )),
+          ),),
       onPressed: onPressed,
       child: SizedBox(
         height: height,
@@ -34,27 +34,35 @@ ElevatedButton buildElevatedButton(
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyle(fontSize: 16,color: textColor??white),
           ),
         ),
       ));
 }
 
-navigatorTo(context,screen){
-  return Navigator.push(context, MaterialPageRoute(builder: (context)=>screen));
+navigatorTo(context, screen) {
+  return Navigator.push(
+      context, MaterialPageRoute(builder: (context) => screen));
 }
-MaskInputFormatter phoneFormatter=MaskInputFormatter(mask: '(+##) ### ### ###');
+
+MaskInputFormatter phoneFormatter =
+    MaskInputFormatter(mask: '(+##) ### ### ###');
 Text defaultText(text) {
-  return Text(text,style: TextStyle(
-      fontSize: 14,color:textColor,fontWeight: FontWeight.normal
-  ),);
+  return Text(
+    text,
+    style: TextStyle(
+      fontSize: 14,
+      color: textColor,
+      fontWeight: FontWeight.normal,
+    ),
+  );
 }
+
 TextFormField buildTextFormFieldPassword(controller, ctx, onChange) {
   return TextFormField(
     onChanged: (val) {
       onChange(val);
     },
-
     obscureText: true,
     controller: controller,
     cursorColor: Colors.grey,
@@ -93,39 +101,45 @@ TextFormField buildTextFormFieldPassword(controller, ctx, onChange) {
     ),
   );
 }
-TextFormField buildTextForm(formatter,TextEditingController controller, hintText,ctx, onChange,keyboardType,preicon,obs,String text) {
+
+TextFormField buildTextForm(formatter, TextEditingController controller,
+    hintText, ctx, onChange, keyboardType, preicon, obs, String text) {
   return TextFormField(
     onChanged: (val) {
       onChange(val);
     },
-    inputFormatters: formatter?[phoneFormatter,]:null,
+    inputFormatters: formatter
+        ? [
+            phoneFormatter,
+          ]
+        : null,
     obscureText: obs,
     controller: controller,
     cursorColor: Colors.grey,
-    keyboardType:keyboardType ,
-
+    keyboardType: keyboardType,
     decoration: InputDecoration(
       hintText: hintText,
-      hintStyle: TextStyle(fontSize:13,color:textColor),
+      hintStyle: TextStyle(fontSize: 13, color: textColor),
       prefixIcon: Icon(
         preicon,
-        color:text.isNotEmpty?iconColor:Colors.grey ,
+        color: text.isNotEmpty ? iconColor : Colors.grey,
       ),
       filled: true,
-      suffix:text.isNotEmpty? Container(
-        margin: const EdgeInsets.only(
-          top: 25
-        ),
-        height: 20,width: 20,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: primaryColor,
-            width: 1.5
-          )
-        ),
-        child: Icon(Icons.check,color: primaryColor,size: 16,),
-      ):null,
+      suffix: text.isNotEmpty
+          ? Container(
+              margin: const EdgeInsets.only(top: 25),
+              height: 20,
+              width: 20,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: primaryColor, width: 1.5)),
+              child: Icon(
+                Icons.check,
+                color: primaryColor,
+                size: 16,
+              ),
+            )
+          : null,
       fillColor: Colors.black.withOpacity(0.05),
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -152,5 +166,32 @@ TextFormField buildTextForm(formatter,TextEditingController controller, hintText
             color: Colors.black.withOpacity(0.05),
           )),
     ),
+  );
+}
+
+Widget dotIndicator({required int dotCount, required int activeDot}) {
+  List<Widget> dotList = List.generate(
+    dotCount,
+    (index) => dot(activeDot == index),
+  );
+
+  return SizedBox(
+    height: 5,
+    width: dotCount * 16.0,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: dotList,
+    ),
+  );
+}
+
+Widget dot(bool active) {
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(2.5),
+      color: white,
+    ),
+    height: 5,
+    width: active ? 16 : 8,
   );
 }
