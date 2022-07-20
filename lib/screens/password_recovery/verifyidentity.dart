@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
-import 'package:walt/Providers/provider1.dart';
+import 'package:walt/Providers/providers.dart';
 import 'package:walt/components/colors.dart';
 import 'package:walt/screens/password_recovery/resetpassword.dart';
 

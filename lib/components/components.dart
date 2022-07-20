@@ -154,3 +154,19 @@ TextFormField buildTextForm(formatter,TextEditingController controller, hintText
     ),
   );
 }
+Container buildContainerDivider() {
+  return Container(
+    height: 3,
+    width: 30,
+    decoration: BoxDecoration(
+        color: Colors.grey[300],
+        borderRadius: BorderRadius.circular(5)),
+  );
+}
+Container myDivider() {
+  return Container(
+    height: 0.7,
+    width: 305,
+    color: Colors.grey[200],
+  );
+}
