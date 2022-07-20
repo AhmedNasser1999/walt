@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:walt/components/colors.dart';
 import 'package:walt/screens/password_recovery/getting_started.dart';
-import '../../Providers/provider1.dart';
+import '../../Providers/providers.dart';
 import '../../components/components.dart';
 
 class ResetPassword extends StatelessWidget {

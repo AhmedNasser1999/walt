@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:walt/Providers/provider1.dart';
+import 'package:walt/Providers/providers.dart';
 
 import '../../components/colors.dart';
 import '../../components/components.dart';
