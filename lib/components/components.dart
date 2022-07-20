@@ -12,84 +12,21 @@ Padding buildCloseButton() {
   );
 }
 
-Container checkCircle() {
-  return Container(
-    margin: const EdgeInsets.only(top: 25),
-    height: 20,
-    width: 20,
-    decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(color: primaryColor, width: 2)),
-    child: Icon(
-      Icons.check,
-      color: primaryColor,
-      size: 16,
-    ),
-  );
-}
-
-Container divider1() {
-  return Container(
-    height: 1,
-    width: double.infinity,
-    color: Colors.grey[300],
-  );
-}
-
-Padding bankOfAmerica(widget) {
-  return Padding(
-      padding: const EdgeInsets.only(left: 25, right: 25),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/images/ambank.png',
-            height: 50,
-            width: 50,
-            fit: BoxFit.cover,
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Bank of America ",
-                style: TextStyle(
-                    fontSize: 15,
-                    color: iconColor,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              const Text(
-                "**** 9999 ",
-                style: TextStyle(color: Colors.grey),
-              )
-            ],
-          ),
-          const Spacer(),
-          InkWell(onTap: () {}, child: widget)
-        ],
-      ));
-}
-
 ElevatedButton buildElevatedButton(
     {required onPrimary,
     required height,
     required width,
     required text,
+      primary,
+      textColor,
     required onPressed}) {
   return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          elevation: 0,
-          primary: primaryColor,
+          primary: primary??primaryColor,
           onPrimary: onPrimary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
-          )),
+          ),),
       onPressed: onPressed,
       child: SizedBox(
         height: height,
@@ -97,7 +34,7 @@ ElevatedButton buildElevatedButton(
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyle(fontSize: 16,color: textColor??white),
           ),
         ),
       ));
@@ -110,12 +47,14 @@ navigatorTo(context, screen) {
 
 MaskInputFormatter phoneFormatter =
     MaskInputFormatter(mask: '(+##) ### ### ###');
-
 Text defaultText(text) {
   return Text(
     text,
     style: TextStyle(
-        fontSize: 14, color: textColor, fontWeight: FontWeight.normal),
+      fontSize: 14,
+      color: textColor,
+      fontWeight: FontWeight.normal,
+    ),
   );
 }
 
@@ -186,7 +125,21 @@ TextFormField buildTextForm(formatter, TextEditingController controller,
         color: text.isNotEmpty ? iconColor : Colors.grey,
       ),
       filled: true,
-      suffix: text.isNotEmpty ? checkCircle() : null,
+      suffix: text.isNotEmpty
+          ? Container(
+              margin: const EdgeInsets.only(top: 25),
+              height: 20,
+              width: 20,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: primaryColor, width: 1.5)),
+              child: Icon(
+                Icons.check,
+                color: primaryColor,
+                size: 16,
+              ),
+            )
+          : null,
       fillColor: Colors.black.withOpacity(0.05),
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -216,61 +169,29 @@ TextFormField buildTextForm(formatter, TextEditingController controller,
   );
 }
 
-Container buildContainerDivider() {
+Widget dotIndicator({required int dotCount, required int activeDot}) {
+  List<Widget> dotList = List.generate(
+    dotCount,
+    (index) => dot(activeDot == index),
+  );
+
+  return SizedBox(
+    height: 5,
+    width: dotCount * 16.0,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: dotList,
+    ),
+  );
+}
+
+Widget dot(bool active) {
   return Container(
-    height: 3,
-    width: 30,
     decoration: BoxDecoration(
-        color: Colors.grey[300], borderRadius: BorderRadius.circular(5)),
-  );
-}
-
-Container myDivider() {
-  return Container(
-    height: 0.7,
-    width: double.infinity,
-    color: Colors.grey[200],
-  );
-}
-
-Row rowBandOfAmerica() {
-  return Row(
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: [
-      Image.asset(
-        'assets/images/ambank.png',
-        height: 40,
-        width: 40,
-        fit: BoxFit.cover,
-      ),
-      const SizedBox(
-        width: 10,
-      ),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Bank of America ",
-            style: TextStyle(
-                fontSize: 14, color: iconColor, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          const Text(
-            "**** 9999 ",
-            style: TextStyle(color: Colors.grey),
-          )
-        ],
-      ),
-      const Spacer(),
-      InkWell(
-          onTap: () {},
-          child: const Icon(
-            Icons.arrow_forward_ios_sharp,
-            size: 16,
-            color: Colors.grey,
-          ))
-    ],
+      borderRadius: BorderRadius.circular(2.5),
+      color: white,
+    ),
+    height: 5,
+    width: active ? 16 : 8,
   );
 }
