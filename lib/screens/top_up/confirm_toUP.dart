@@ -83,47 +83,7 @@ class ConfirmToUpScreen extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/images/ambank.png',
-                              height: 40,
-                              width: 40,
-                              fit: BoxFit.cover,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Bank of America ",
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      color: iconColor,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                const Text(
-                                  "**** 9999 ",
-                                  style: TextStyle(color: Colors.grey),
-                                )
-                              ],
-                            ),
-                            const Spacer(),
-                            InkWell(
-                                onTap: () {},
-                                child: const Icon(
-                                  Icons.arrow_forward_ios_sharp,
-                                  size: 16,
-                                  color: Colors.grey,
-                                ))
-                          ],
-                        )
+                        rowBandOfAmerica()
                       ],
                     ),
                   ),
@@ -219,4 +179,6 @@ class ConfirmToUpScreen extends StatelessWidget {
       ),
     );
   }
+
+
 }
