@@ -36,7 +36,7 @@ class SelectBankScreen extends StatelessWidget {
             myDivider(),
             const SizedBox(height: 30,),
             bankOfAmerica(checkCircle(),),
-            const  SizedBox(height: 30,),
+            const SizedBox(height: 30,),
             Padding(
                 padding:const EdgeInsets.symmetric(
                   horizontal: 25
