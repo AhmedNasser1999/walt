@@ -27,7 +27,7 @@ class TransferDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Center(child: buildContainerDivider()),
+            Center(child: buildDivider(190, 10, Colors.red, 10)),
             const SizedBox(
               height: 30,
             ),
@@ -41,7 +41,7 @@ class TransferDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            myDivider(),
+            buildDivider(10, 10, Colors.red, 10),
             const SizedBox(
               height: 30,
             ),
@@ -66,11 +66,11 @@ class TransferDetailsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   buildPaddingRow('To', 'Orhan Ozdemir'),
-                  divider1(),
+                  buildDivider(10, 100, Colors.red, 10),
                   buildPaddingRow('Credit Card', 'Visa 8888'),
-                  divider1(),
+                  buildDivider(100, 100, Colors.red, 10),
                   buildPaddingRow('Transaction fee', 'Free'),
-                  divider1(),
+                  buildDivider(100, 10, Colors.red, 10),
                   buildPaddingRow('Total amount', '\$ 1,240.00')
                 ],
               ),

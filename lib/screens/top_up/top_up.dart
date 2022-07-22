@@ -27,7 +27,7 @@ class TopUpScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            buildContainerDivider(),
+            buildDivider(10, 10, Colors.red, 10),
             const SizedBox(
               height: 160,
             ),

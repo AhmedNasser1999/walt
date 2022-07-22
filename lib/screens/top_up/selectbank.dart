@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../../components/colors.dart';
 import '../../components/components.dart';
 class SelectBankScreen extends StatelessWidget {
   const SelectBankScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +23,7 @@ class SelectBankScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Center(child: buildContainerDivider()),
+            Center(child: buildDivider(10, 10, Colors.red, 10)),
            const SizedBox(height: 30,),
             Text("Cash Out to Associated Bank",style:
               TextStyle(
@@ -33,7 +31,7 @@ class SelectBankScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold
               ),),
             const  SizedBox(height: 30,),
-            myDivider(),
+            buildDivider(10, 10, Colors.red, 10),
             const SizedBox(height: 30,),
             bankOfAmerica(checkCircle(),),
             const SizedBox(height: 30,),
@@ -41,7 +39,7 @@ class SelectBankScreen extends StatelessWidget {
                 padding:const EdgeInsets.symmetric(
                   horizontal: 25
                 ),
-                child: myDivider()),
+                child: buildDivider(100, 10, Colors.red, 10)),
             const  SizedBox(height: 30,),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 25, bottom: 27),

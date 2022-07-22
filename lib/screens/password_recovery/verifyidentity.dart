@@ -76,43 +76,7 @@ class VerifyIdentityScreen extends StatelessWidget {
                             const SizedBox(
                               height: 72,
                             ),
-                            Pinput(
-                              length: 4,
-                              validator: (s) {
-                                provider.changeIsPain(s);
-                                if (provider.isPain) {
-                                  return null;
-                                } else {
-                                  return 'Pin is incorrect';
-                                }
-                              },
-                              showCursor: true,
-                              defaultPinTheme: defaultPinTheme,
-                              onCompleted: (pin) => print(pin),
-                              pinputAutovalidateMode:
-                                  PinputAutovalidateMode.onSubmit,
-                            ),
-                            const SizedBox(
-                              height: 24,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "I didn't receive code.",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.grey.shade600),
-                                ),
-                                Text(
-                                  "Resend Code",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.bold,
-                                      color: primaryColor,
-                                ))
-                              ],
-                            ),
+                           buildPinCode(provider, defaultPinTheme),
                             const SizedBox(
                               height: 150,
                             ),

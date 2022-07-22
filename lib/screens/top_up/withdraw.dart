@@ -30,7 +30,7 @@ class WithdrawScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            buildContainerDivider(),
+            buildDivider(10, 100, Colors.red, 10),
             const SizedBox(
               height: 40,
             ),
@@ -55,7 +55,7 @@ class WithdrawScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            myDivider(),
+            buildDivider(10, 10, Colors.red, 10),
             const SizedBox(
               height: 40,
             ),

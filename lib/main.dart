@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:walt/components/colors.dart';
+import 'package:walt/screens/home_screen.dart';
 import 'package:walt/screens/on_boarding/on_boarding_screen.dart';
 import 'package:walt/screens/password_recovery/passwordrecovery.dart';
+import 'package:walt/screens/password_recovery/verifyidentity.dart';
+import 'package:walt/screens/top_up/withdraw_authentication.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: primarySwatch,
       ),
-      home: const OnBoardingScreen(),
+      home:  HomeScreen(),
     );
   }
 }

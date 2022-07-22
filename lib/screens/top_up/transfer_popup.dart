@@ -91,7 +91,7 @@ class TransferPopUp extends StatelessWidget {
                         const SizedBox(
                           height: 25,
                         ),
-                        myDivider(),
+                       buildDivider(2, 100,Colors.red, 10),
                         const SizedBox(
                           height: 20,
                         ),
@@ -100,7 +100,7 @@ class TransferPopUp extends StatelessWidget {
                         const SizedBox(
                           height: 25,
                         ),
-                        myDivider(),
+                        buildDivider(10, 10, Colors.red, 10),
                         const SizedBox(
                           height: 20,
                         ),
