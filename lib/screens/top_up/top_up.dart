@@ -17,8 +17,8 @@ class TopUpScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
+            topLeft: Radius.circular(30.0),
+            topRight: Radius.circular(30.0),
           ),
         ),
         child: Column(
@@ -27,7 +27,11 @@ class TopUpScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            buildDivider(10, 10, Colors.red, 10),
+            buildDivider(
+                3.0,
+                35.0,
+                Colors.grey[300],
+                4.0),
             const SizedBox(
               height: 160,
             ),
@@ -59,7 +63,7 @@ class TopUpScreen extends StatelessWidget {
                   navigatorTo(context, const ConfirmToUpScreen());
                 }),
             const SizedBox(
-              height: 20,
+              height: 20.0,
             ),
           ],
         ),

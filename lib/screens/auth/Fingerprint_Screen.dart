@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:walt/components/components.dart';
+import 'package:walt/screens/password_recovery/passwordrecovery.dart';
 
 import 'OTP_Screen.dart';
-import 'component/button.dart';
 
 class FingerprintScreen extends StatelessWidget {
   const FingerprintScreen({Key? key}) : super(key: key);
@@ -62,9 +63,14 @@ class FingerprintScreen extends StatelessWidget {
                               color: Colors.grey[300],
                             ),
                             const SizedBox(height: 100.0),
-                            DefultButton(
-                              onPressed: () {},
-                              buttonText: 'Next',
+                            buildElevatedButton(
+                              onPrimary: Colors.white,
+                              height: 45.0,
+                              width: 305.0,
+                              text: 'NEXT',
+                              onPressed: () {
+                                navigatorTo(context, PasswordRecovery());
+                              },
                             ),
                             const SizedBox(height: 16.0),
                             Padding(

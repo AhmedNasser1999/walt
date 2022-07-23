@@ -7,6 +7,7 @@ import '../../components/components.dart';
 class TransferPopUp extends StatelessWidget {
   const TransferPopUp({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +92,7 @@ class TransferPopUp extends StatelessWidget {
                         const SizedBox(
                           height: 25,
                         ),
-                       buildDivider(2, 100,Colors.red, 10),
+                       buildDivider(1.0, double.infinity,Colors.grey[200], 0.0),
                         const SizedBox(
                           height: 20,
                         ),
@@ -100,7 +101,8 @@ class TransferPopUp extends StatelessWidget {
                         const SizedBox(
                           height: 25,
                         ),
-                        buildDivider(10, 10, Colors.red, 10),
+                        buildDivider(1.0
+                            , double.infinity,Colors.grey[200], 0.0),
                         const SizedBox(
                           height: 20,
                         ),

@@ -17,7 +17,7 @@ class WithdrawAuthenticationScreen extends StatelessWidget {
         fontWeight: FontWeight.w600),
     decoration: BoxDecoration(
       color: Colors.black.withOpacity(0.06),
-      border: Border.all(color: const Color.fromRGBO(234, 239, 243, 1)),
+      border: Border.all(color: const Color.fromRGBO(234, 239, 243, 1),),
       borderRadius: BorderRadius.circular(20),
     ),
   );
@@ -46,7 +46,7 @@ class WithdrawAuthenticationScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                buildDivider(10, 100, Colors.red, 10),
+                buildDivider(4.0, 40.0, Colors.grey[200], 10.0),
                 const SizedBox(
                   height: 35,
                 ),
@@ -60,7 +60,7 @@ class WithdrawAuthenticationScreen extends StatelessWidget {
                 const SizedBox(
                   height: 35,
                 ),
-                buildDivider(10, 100, Colors.red, 10),
+                buildDivider(1.0, double.infinity, Colors.grey[200], 0.0),
                 const SizedBox(
                   height: 30,
                 ),

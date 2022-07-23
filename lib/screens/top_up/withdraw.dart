@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:walt/screens/top_up/selectbank.dart';
-
 import '../../components/colors.dart';
 import '../../components/components.dart';
-import 'confirm_toUP.dart';
 
 class WithdrawScreen extends StatelessWidget {
   WithdrawScreen({Key? key}) : super(key: key);
@@ -30,7 +28,7 @@ class WithdrawScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            buildDivider(10, 100, Colors.red, 10),
+            buildDivider(4.0, 40.0, Colors.grey[200], 10.0),
             const SizedBox(
               height: 40,
             ),
@@ -55,7 +53,7 @@ class WithdrawScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            buildDivider(10, 10, Colors.red, 10),
+            buildDivider(1.0, double.infinity, Colors.grey[200], 10.0),
             const SizedBox(
               height: 40,
             ),

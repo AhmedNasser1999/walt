@@ -27,21 +27,21 @@ class TransferDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Center(child: buildDivider(190, 10, Colors.red, 10)),
+            Center(child: buildDivider(4.0, 40.0, Colors.grey[200], 10.0)),
             const SizedBox(
               height: 30,
             ),
             bankOfAmerica(
-                Icon(
-                  Icons.keyboard_arrow_down_outlined,
-                  size: 26,
-                  color: Colors.grey,
-                ),
+              const Icon(
+                Icons.keyboard_arrow_down_outlined,
+                size: 26,
+                color: Colors.grey,
+              ),
             ),
             const SizedBox(
               height: 25,
             ),
-            buildDivider(10, 10, Colors.red, 10),
+            buildDivider(1.0, double.infinity, Colors.grey[200], 0.0),
             const SizedBox(
               height: 30,
             ),
@@ -66,11 +66,11 @@ class TransferDetailsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   buildPaddingRow('To', 'Orhan Ozdemir'),
-                  buildDivider(10, 100, Colors.red, 10),
+                  buildDivider(1.0, 305.0, Colors.grey[300], 0.0),
                   buildPaddingRow('Credit Card', 'Visa 8888'),
-                  buildDivider(100, 100, Colors.red, 10),
+                  buildDivider(1.0, 305.0, Colors.grey[300], 0.0),
                   buildPaddingRow('Transaction fee', 'Free'),
-                  buildDivider(100, 10, Colors.red, 10),
+                  buildDivider(1.0, 305.0, Colors.grey[300], 0.0),
                   buildPaddingRow('Total amount', '\$ 1,240.00')
                 ],
               ),
@@ -94,10 +94,6 @@ class TransferDetailsScreen extends StatelessWidget {
       ),
     );
   }
-
-
-
-
 
   Padding buildPaddingRow(text1, text2) {
     return Padding(

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:walt/screens/auth/Fingerprint_Screen.dart';
 
-import 'component/button.dart';
-import 'component/otbItem.dart';
-
+import '../../components/components.dart';
 class OtpScreen extends StatelessWidget {
-  var formKey = GlobalKey<FormState>();
-
   OtpScreen({Key? key}) : super(key: key);
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +82,7 @@ class OtpScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Text('i didin\'t receive code.'),
+                                  const Text('i didn\'t receive code.'),
                                   TextButton(
                                     onPressed: () {},
                                     child: const Text('Resend Code'),
@@ -92,12 +90,15 @@ class OtpScreen extends StatelessWidget {
                                 ],
                               ),
                               const SizedBox(height: 90.0),
-                              DefultButton(
-                                onPressed: () {
-                                  if (formKey.currentState!.validate()) {}
-                                },
-                                buttonText: 'Next',
-                              ),
+                              buildElevatedButton(
+                                  onPrimary: Colors.white,
+                                  height: 45.0,
+                                  width: 305.0,
+                                  text: "NEXT", onPressed:  () {
+                                if (formKey.currentState!.validate()) {
+                                  navigatorTo(context,const FingerprintScreen());
+                                }
+                              },),
                               const SizedBox(height: 16.0),
                               Padding(
                                 padding: const EdgeInsets.only(left: 36.0),
@@ -139,7 +140,7 @@ Widget buildUserImage() {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset('images/Thumb.png'),
+        Image.asset('assets/images/user.png'),
       ],
     ),
   );

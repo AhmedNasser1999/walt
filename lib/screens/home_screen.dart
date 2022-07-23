@@ -14,17 +14,7 @@ final searchController=TextEditingController();
           children: [
             Column(
               children: [
-                buildTextForm(
-                    false,
-                    searchController,
-                    'Search on CaPay',
-                    context,
-                    (){},
-                    TextInputType.text,
-                    Icon(Icons.add),
-                    false ,
-                    'sk'),
-              ],
+            ]
             ),
             Container(
               height:800,
@@ -38,7 +28,6 @@ final searchController=TextEditingController();
               ),
               child: Column(
                 children: [
-
                 ],
               ),
             )
