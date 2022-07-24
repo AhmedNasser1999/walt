@@ -27,7 +27,7 @@ class ConfirmToUpScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            buildContainerDivider(),
+            buildDivider(4.5, 35.0, Colors.grey[200], 4.0),
             const SizedBox(
               height: 110,
             ),
@@ -43,19 +43,19 @@ class ConfirmToUpScreen extends StatelessWidget {
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
-              height: 66,
+              height: 54,
             ),
             Container(
-              height: 480,
+              height: 490,
               decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.08),
-                borderRadius: BorderRadius.circular(35),
+                borderRadius: BorderRadius.circular(35.0),
               ),
               padding: const EdgeInsets.only(
                   left: 17, right: 17, top: 20, bottom: 20),
               child: Column(
                 children: [
-                  buildContainerDivider(),
+                  buildDivider(4.0, 40.0, Colors.grey[350], 4.0),
                   const SizedBox(
                     height: 23,
                   ),
@@ -64,8 +64,8 @@ class ConfirmToUpScreen extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(15)),
-                    padding: const EdgeInsets.all(15),
+                        borderRadius: BorderRadius.circular(15.0)),
+                    padding: const EdgeInsets.all(15.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -79,7 +79,7 @@ class ConfirmToUpScreen extends StatelessWidget {
                         const SizedBox(
                           height: 25,
                         ),
-                        myDivider(),
+                        buildDivider(1.0, 305.0, Colors.grey[100], 0.0),
                         const SizedBox(
                           height: 20,
                         ),
@@ -109,7 +109,7 @@ class ConfirmToUpScreen extends StatelessWidget {
                           const SizedBox(
                             height: 25,
                           ),
-                          myDivider(),
+                          buildDivider(1.0, 305.0, Colors.grey[100], 0.0),
                           const SizedBox(
                             height: 20,
                           ),
@@ -134,7 +134,8 @@ class ConfirmToUpScreen extends StatelessWidget {
                           const SizedBox(
                             height: 25,
                           ),
-                          myDivider(),
+                          buildDivider(1.0, 305.0, Colors.grey[100], 0.0),
+
                           const SizedBox(
                             height: 20,
                           ),
@@ -159,7 +160,7 @@ class ConfirmToUpScreen extends StatelessWidget {
                         ],
                       )),
                   const SizedBox(
-                    height: 20,
+                    height: 25,
                   ),
                   buildElevatedButton(
                       onPrimary: Colors.white,
@@ -174,10 +175,8 @@ class ConfirmToUpScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
+          ],)));
+
   }
 
 

@@ -1,6 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:mask_input_formatter/mask_input_formatter.dart';
+import 'package:pinput/pinput.dart';
 import 'package:walt/components/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class OtbItem extends StatelessWidget {
+  const OtbItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 60.0,
+      height: 60.0,
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: TextFormField(
+        onChanged: (value) {
+          if (value.length == 1) {
+            FocusScope.of(context).nextFocus();
+          }
+        },
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'You must Enter number';
+          }
+          return null;
+        },
+        decoration: const InputDecoration(
+          border: InputBorder.none,
+        ),
+        style: const TextStyle(fontSize: 20.0),
+        keyboardType: TextInputType.number,
+        textAlign: TextAlign.center,
+        inputFormatters: [
+          LengthLimitingTextInputFormatter(1),
+          FilteringTextInputFormatter.digitsOnly,
+        ],
+      ),
+    );
+  }
+}
+
 
 Padding buildCloseButton() {
   return Padding(
@@ -12,6 +55,49 @@ Padding buildCloseButton() {
   );
 }
 
+buildPinCode(provider,defaultPinTheme){
+  return Column(
+    children: [
+      Pinput(
+        length: 4,
+        validator: (s) {
+          provider.changeIsPain(s);
+          if (provider.isPain) {
+            return null;
+          } else {
+            return 'Pin is incorrect';
+          }
+        },
+        showCursor: true,
+        defaultPinTheme: defaultPinTheme,
+        onCompleted: (pin) => print(pin),
+        pinputAutovalidateMode:
+        PinputAutovalidateMode.onSubmit,
+      ),
+      const SizedBox(
+        height: 24,
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "I didn't receive code.",
+            style: TextStyle(
+                fontSize: 12,
+                color: Colors.grey.shade600),
+          ),
+          Text(
+              "Resend Code",
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: primaryColor,
+              ))
+        ],
+      ),
+    ],
+  );
+}
 ElevatedButton buildElevatedButton(
     {required onPrimary,
     required height,
@@ -212,14 +298,6 @@ Container checkCircle() {
   );
 }
 
-Container divider1() {
-  return Container(
-    height: 1,
-    width: double.infinity,
-    color: Colors.grey[300],
-  );
-}
-
 Padding bankOfAmerica(widget) {
   return Padding(
       padding: const EdgeInsets.only(left: 25, right: 25),
@@ -258,24 +336,6 @@ Padding bankOfAmerica(widget) {
           InkWell(onTap: () {}, child: widget)
         ],
       ));
-}
-
-
-Container buildContainerDivider() {
-  return Container(
-    height: 3,
-    width: 30,
-    decoration: BoxDecoration(
-        color: Colors.grey[300], borderRadius: BorderRadius.circular(5)),
-  );
-}
-
-Container myDivider() {
-  return Container(
-    height: 0.7,
-    width: double.infinity,
-    color: Colors.grey[200],
-  );
 }
 
 Row rowBandOfAmerica() {
@@ -318,6 +378,18 @@ Row rowBandOfAmerica() {
             color: Colors.grey,
           ))
     ],
+  );
+}
+
+Container buildDivider(
+    height,width,color,radius
+    ) {
+  return Container(
+    height:height,
+    width: width,
+    decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(radius)),
   );
 }
 

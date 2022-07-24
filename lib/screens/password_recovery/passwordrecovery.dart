@@ -112,16 +112,16 @@ class PasswordRecovery extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const Spacer(),
+                        Spacer(),
                         buildElevatedButton(
 
                             onPrimary: Colors.white,
-                            height: 47.0,
-                            width: 280.0,
+                            height: 45.0,
+                            width: 300.0,
                             text: "SEND CODE",
                             onPressed:()=>navigatorTo(context, VerifyIdentityScreen())),
                         const SizedBox(
-                          height: 38,
+                          height: 42,
                         )
                       ],
                     ),
