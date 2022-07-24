@@ -4,6 +4,7 @@ import 'package:walt/Providers/auth_provider.dart';
 import 'package:walt/components/colors.dart';
 import 'package:walt/components/components.dart';
 import 'package:walt/components/image_path.dart';
+import 'package:walt/screens/auth/OTP_Screen.dart';
 import 'package:walt/screens/card/choice_card.dart';
 
 class LogIn extends StatelessWidget {
@@ -172,7 +173,7 @@ class LogIn extends StatelessWidget {
                           onPressed: (){
                             if(provider.buttonIsActive)
                               {
-
+                                  navigatorTo(context, OtpScreen());
                               }
                           },
                         ),

@@ -4,6 +4,7 @@ import 'package:walt/Providers/providers.dart';
 
 import '../../components/colors.dart';
 import '../../components/components.dart';
+import '../card/choice_card.dart';
 
 class GettingStartedScreen extends StatelessWidget {
   GettingStartedScreen({Key? key}) : super(key: key);
@@ -228,7 +229,7 @@ class GettingStartedScreen extends StatelessWidget {
                                       provider.password.isNotEmpty &&
                                       provider.phone.isNotEmpty)
                                   ? () {
-                                      navigatorTo(context, const Scaffold());
+                                      navigatorTo(context,const ChoiceCard());
                                     }
                                   : null,
                             ),

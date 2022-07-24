@@ -59,7 +59,8 @@ class PopUp extends StatelessWidget {
                         "GO BACK TO HOME",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: primaryColor, fontSize: 16),
+                            color: primaryColor,
+                            fontSize: 16),
                       ),
                     ),
                   ],
